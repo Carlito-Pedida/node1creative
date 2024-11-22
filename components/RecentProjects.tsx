@@ -1,3 +1,5 @@
+"use client";
+
 import { projects } from "@/data";
 import { div } from "framer-motion/client";
 import React from "react";
