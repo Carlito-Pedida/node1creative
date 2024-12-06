@@ -14,8 +14,8 @@ export default withSentryConfig(
 
     // Suppresses source map uploading logs during build
     silent: true,
-    org: "node1creative",
-    project: "node1creative-portfolio"
+    org: "carlito-23",
+    project: "javascript-nextjs"
   },
   {
     // For all available options, see:
