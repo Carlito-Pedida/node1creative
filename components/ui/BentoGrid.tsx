@@ -1,5 +1,3 @@
-"use client";
-
 import animationData from "@/data/confetti.json";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
