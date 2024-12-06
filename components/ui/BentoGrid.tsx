@@ -47,10 +47,9 @@ export const BentoGridItem = ({
   spareImg?: string;
 }) => {
   const [copied, setCopied] = useState(false);
-  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
+    setCopied(true);
   }, []);
 
   const leftStack = ["ReactJS", "NextJS", "Javascript"];
@@ -65,7 +64,7 @@ export const BentoGridItem = ({
     }
   };
 
-  if (!isClient) return null;
+  if (!copied) return null;
 
   const handleCopy = () => {
     navigator.clipboard.writeText("info@node1creative.com");
