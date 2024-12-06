@@ -1,9 +1,7 @@
 "use client";
 
-import React from "react";
-import { InfiniteMovingCards } from "./ui/InfiniteMovingCards";
 import { companies, testimonials } from "@/data";
-import Image from "next/image";
+import { InfiniteMovingCards } from "./ui/InfiniteMovingCards";
 
 const Clients = () => {
   return (
