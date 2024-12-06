@@ -4,7 +4,7 @@ import animationData from "@/data/confetti.json";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import Lottie from "react-lottie";
-import { GlobeDemo } from "../GlobeDemo";
+import GridGlobe from "../GridGlobe";
 import { GradientBgAnimation } from "./GradientBgAnimation";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
@@ -57,7 +57,7 @@ export const BentoGridItem = ({
     autoplay: copied,
     animationData: animationData,
     rendererSettings: {
-      preserveAspectRatio: "xMidyMid slice"
+      preserveAspectRatio: "xMidYMid slice"
     }
   };
 
@@ -126,7 +126,7 @@ export const BentoGridItem = ({
             {title}
           </div>
 
-          {id === 2 && <GlobeDemo />}
+          {id === 2 && <GridGlobe />}
 
           {id == 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
