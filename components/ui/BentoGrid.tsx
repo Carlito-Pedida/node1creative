@@ -1,13 +1,12 @@
 import animationData from "@/data/confetti.json";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GridGlobe from "../GridGlobe";
 import { GradientBgAnimation } from "./GradientBgAnimation";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
 import dynamic from "next/dynamic";
-
-const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
+import Lottie from "react-lottie";
 
 export const BentoGrid = ({
   className,
@@ -48,18 +47,25 @@ export const BentoGridItem = ({
   spareImg?: string;
 }) => {
   const [copied, setCopied] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const leftStack = ["ReactJS", "NextJS", "Javascript"];
   const rightStack = ["Typescript", "NodeJS", "SQL"];
 
   const defaultOptions = {
-    loop: true,
-    autoplay: true,
+    loop: copied,
+    autoplay: copied,
     animationData: animationData,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice"
     }
   };
+
+  if (!isClient) return null;
 
   const handleCopy = () => {
     navigator.clipboard.writeText("info@node1creative.com");
