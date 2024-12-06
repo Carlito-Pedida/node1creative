@@ -1,11 +1,12 @@
 import animationData from "@/data/confetti.json";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
-import Lottie from "react-lottie";
+import { useEffect, useState } from "react";
 import GridGlobe from "../GridGlobe";
 import { GradientBgAnimation } from "./GradientBgAnimation";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
+import dynamic from "next/dynamic";
+import Lottie from "react-lottie";
 
 export const BentoGrid = ({
   className,
@@ -46,6 +47,11 @@ export const BentoGridItem = ({
   spareImg?: string;
 }) => {
   const [copied, setCopied] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const leftStack = ["ReactJS", "NextJS", "Javascript"];
   const rightStack = ["Typescript", "NodeJS", "SQL"];
@@ -58,6 +64,8 @@ export const BentoGridItem = ({
       preserveAspectRatio: "xMidYMid slice"
     }
   };
+
+  if (!isClient) return null;
 
   const handleCopy = () => {
     navigator.clipboard.writeText("info@node1creative.com");
@@ -166,7 +174,7 @@ export const BentoGridItem = ({
                   copied ? "block" : "block"
                 }`}
               >
-                {/* <Lottie options={defaultOptions} height={200} width={400} /> */}
+                <Lottie options={defaultOptions} height={200} width={400} />
               </div>
 
               <MagicButton
