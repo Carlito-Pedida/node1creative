@@ -1,6 +1,9 @@
 import { withSentryConfig } from "@sentry/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ["images.unsplash.com"] // Add allowed image domains here
+  },
   typescript: {
     ignoreBuildErrors: true
   }
