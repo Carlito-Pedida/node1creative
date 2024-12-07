@@ -8,6 +8,7 @@ import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import WorkFlow from "@/components/WorkFlow";
 import { navItems } from "@/data";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function Home() {
   return (

@@ -1,28 +1,22 @@
-import { FaLocationArrow } from "react-icons/fa6";
-
 import { socialMedia } from "@/data";
-import MagicButton from "./ui/MagicButton";
 import Link from "next/link";
+import { AnimatedContactModal } from "./AnimatedContactModal";
 
 const Footer = () => {
   return (
     <footer className="w-full pb-10 mb-[100px] md:mb-5" id="contact">
       <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
+        <h1 className="heading lg:max-w-[55vw]">
+          Need a <span className="text-purple ">digital platform</span> for your
+          business?
+          <br />
         </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
-        </p>
-        <a href="mailto:info@node1creative.com">
-          <MagicButton
-            buttonName="Let's get in touch"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
-        </a>
+        <h1 className="heading lg:max-w-[55vw] mt-2">We can help...</h1>
+        <h4 className="text-white-200 md:mt-10 my-5 text-center text-lg">
+          Reach out and schedule a call today, you'll be glad you did.
+        </h4>
+
+        <AnimatedContactModal />
       </div>
       <div className="flex mt-16 md:flex-row flex-col justify-between items-center">
         <p className="md:text-base text-sm md:font-normal font-light">
