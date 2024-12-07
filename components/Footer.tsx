@@ -13,7 +13,7 @@ const Footer = () => {
         </h1>
         <h1 className="heading lg:max-w-[55vw] mt-2">We can help...</h1>
         <h4 className="text-white-200 md:mt-10 my-5 text-center text-lg">
-          Reach out and schedule a call today, you'll be glad you did.
+          Reach out and schedule a call today, you&apos;ll be glad you did.
         </h4>
 
         <AnimatedContactModal />
